@@ -14,7 +14,11 @@ import { Post_i } from './post.interface';
   styleUrl: './post.component.css'
 })
 export class PostComponent {
-  constructor(private postService: PostService){
+  constructor(
+    private postService: PostService,
+    private matDialog: MatDialog,
+    
+  ){
 
   }
 
@@ -31,7 +35,9 @@ export class PostComponent {
       
 
     }) ;
-
   }
+onFormAction(){
+  this.matDialog.open(PostDialogComponent);
+}
 
 }
